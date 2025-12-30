@@ -3,6 +3,7 @@ Pastebin-Lite
 A minimal Pastebin-like web application that allows users to create and share text pastes with optional time-based expiry and view-count limits.
 
 The project is designed to meet the functional and non-functional requirements described in the take-home assignment and is suitable for automated testing against a deployed environment.
+
 --------------
 Deployed Application
 
@@ -11,6 +12,7 @@ https://pastebin-sooty.vercel.app/
 
 Backend (Render):
 https://pastebin-ypc5.onrender.com
+
 -------------------------------
 
 Features
@@ -20,6 +22,7 @@ Create a paste containing arbitrary text
 Receive a shareable URL for each paste
 
 View a paste via a public HTML page
+
 ------------------------
 Optional constraints:
 
@@ -30,6 +33,7 @@ View-count limit
 Paste becomes unavailable as soon as any constraint is triggered
 
 Safe rendering of paste content (no script execution)
+
 ---------------------------
 Tech Stack
 Backend
@@ -47,6 +51,7 @@ Frontend
 React (Vite)
 
 Tailwind CSS (dark theme)
+
 ------------------------------
 Deployment
 
@@ -149,6 +154,7 @@ x-test-now-ms: <milliseconds since epoch>
 is used as the current time for expiry logic only.
 
 If the header is absent, the system time is used.
+
 ----------------------------------
 Persistence Layer
 
@@ -159,6 +165,7 @@ All pastes are stored persistently in MongoDB
 View counts and expiry metadata are stored per paste
 
 No in-memory storage is used, ensuring correctness across serverless requests
+
 -----------------------------
 Running the Project Locally
 Backend
@@ -171,6 +178,7 @@ Environment variables required:
 
 PORT=3001
 MONGO_URI=<your MongoDB Atlas connection string>
+
 ----------------------
 Frontend
 cd frontend
@@ -181,6 +189,7 @@ npm run dev
 Environment variable:
 
 VITE_API_BASE_URL=http://localhost:3001
+
 -----------------------------
 Design Decisions
 
@@ -193,6 +202,7 @@ Backend owns /p/:id HTML routes to meet assignment requirements
 Environment-based configuration for deployment safety
 
 Minimal UI with focus on correctness and reliability over styling
+
 --------------------------------------
 Notes
 
@@ -203,6 +213,7 @@ No hardcoded localhost URLs in production code
 Server-side code does not rely on global mutable state
 
 The application starts without requiring manual database migrations
+
 --------------------
 Author
 
